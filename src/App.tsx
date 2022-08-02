@@ -3,6 +3,7 @@ import Product from "./components/Product";
 import {useProducts} from "./hooks/products";
 import Loader from "./components/Loader";
 import ErrorMessage from "./components/ErrorMessage";
+import Modal from "./components/Modal";
 
 const App = () => {
 
@@ -13,7 +14,7 @@ const App = () => {
             {loading && <Loader />}
             {error && <ErrorMessage error={error} />}
             {items.map(item => <Product product={item} key={item.id}/>)}
-
+            <Modal />
         </div>
     );
 }
