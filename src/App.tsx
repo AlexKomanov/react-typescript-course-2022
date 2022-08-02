@@ -4,6 +4,7 @@ import {useProducts} from "./hooks/products";
 import Loader from "./components/Loader";
 import ErrorMessage from "./components/ErrorMessage";
 import Modal from "./components/Modal";
+import CreateProduct from "./components/CreateProduct";
 
 const App = () => {
 
@@ -14,7 +15,9 @@ const App = () => {
             {loading && <Loader />}
             {error && <ErrorMessage error={error} />}
             {items.map(item => <Product product={item} key={item.id}/>)}
-            <Modal />
+            <Modal title="Add new product">
+                <CreateProduct />
+            </Modal>
         </div>
     );
 }
